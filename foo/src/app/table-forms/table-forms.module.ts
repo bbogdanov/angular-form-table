@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TableComponent } from './table/table.component';
 import { RowComponent } from './row/row.component';
 import { CellComponent } from './cell/cell.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   TableComponent, RowComponent, CellComponent
@@ -10,7 +11,8 @@ const components = [
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   declarations: [...components],
   exports: [...components]
