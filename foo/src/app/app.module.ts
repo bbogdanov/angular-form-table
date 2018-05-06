@@ -1,3 +1,4 @@
+import { TableFormsModule } from './table-forms/table-forms.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +9,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TableFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
