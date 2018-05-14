@@ -37,6 +37,8 @@ export class TableComponent implements OnInit {
 
     for (let control in this.form.controls) {
         console.log(this.form.controls[control].value);
+        console.log('Form errors', this.form.errors);
+        console.log('Errors row',  this.form.controls[control].errors);
     }
   }
 }
