@@ -1,13 +1,13 @@
-import {FormControl} from '@angular/forms';
+import {FormArray} from '@angular/forms';
 import {AsyncValidatorFn, ValidatorFn} from '@angular/forms/src/directives/validators';
-import {AbstractControlOptions} from '@angular/forms/src/model';
+import {AbstractControl, AbstractControlOptions} from '@angular/forms/src/model';
 
-export class CellControl extends FormControl {
+export class TableControl extends FormArray {
 
-  public constructor(formState?: any,
+  public constructor(controls: AbstractControl[],
                      validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
                      asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null) {
-    super(formState, validatorOrOpts, asyncValidator)
+    super(controls, validatorOrOpts, asyncValidator);
   }
 
 }

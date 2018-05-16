@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, Optional} from '@angular/core';
-import {AsyncValidatorFn, FormBuilder, FormGroup, ValidatorFn} from '@angular/forms';
-import {RowControl} from '../row/row';
+import {AbstractControl, AsyncValidatorFn, ValidatorFn} from '@angular/forms';
+import {TableControl} from './table';
 
 @Component({
   selector: 'app-table',
@@ -9,10 +9,8 @@ import {RowControl} from '../row/row';
 })
 export class TableComponent implements OnInit {
 
-  public form: FormGroup;
-
   @Input()
-  public rows: RowControl[];
+  public rows: AbstractControl[];
 
   @Input()
   @Optional()
@@ -22,23 +20,10 @@ export class TableComponent implements OnInit {
   @Optional()
   public asyncValidators: AsyncValidatorFn[];
 
-  public constructor(private formBuilder: FormBuilder) {
-  }
+  public table: TableControl;
 
   public ngOnInit() {
-    this.form = this.formBuilder.group(this.rows, {
-      validator: this.validators,
-      asyncValidator: this.asyncValidators
-    });
+    this.table = new TableControl(this.rows);
   }
-
-  public submit() {
-    this.form.updateValueAndValidity();
-
-    for (let control in this.form.controls) {
-        console.log(this.form.controls[control].value);
-        console.log('Form errors', this.form.errors);
-        console.log('Errors row',  this.form.controls[control].errors);
-    }
-  }
+  
 }

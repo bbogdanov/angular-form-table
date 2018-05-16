@@ -1,5 +1,3 @@
-<form [formGroup]="form">
+<form [formGroup]="table">
   <app-row class="flex flex-row" *ngFor="let row of rows" [row]="row"></app-row>
 </form>
-
-<button (click)="submit()"> Log in console </button>

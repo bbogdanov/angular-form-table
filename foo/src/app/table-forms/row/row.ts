@@ -1,15 +1,15 @@
 import {Optional} from '@angular/core';
-import {FormArray} from '@angular/forms';
-import {AsyncValidatorFn, ValidatorFn} from '@angular/forms/src/directives/validators';
-import {AbstractControl, AbstractControlOptions} from '@angular/forms/src/model';
+import {AbstractControl, AsyncValidatorFn, FormGroup, ValidatorFn} from '@angular/forms';
+import {AbstractControlOptions} from '@angular/forms/src/model';
 
-export class RowControl extends FormArray {
+export class RowControl extends FormGroup {
 
-  public constructor(controls: AbstractControl[],
+  public constructor(controls: { [key: string]: AbstractControl },
                      @Optional()
-                       validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
+                     validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
                      @Optional()
-                       asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null) {
+                     asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null) {
     super(controls, validatorOrOpts, asyncValidator);
   }
+
 }

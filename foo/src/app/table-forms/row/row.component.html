@@ -1,1 +1,1 @@
-<app-cell *ngFor="let control of row.controls" [control]="control"></app-cell>
+<app-cell *ngFor="let control of row.controls | keys" [control]="row.controls[control]"></app-cell>
