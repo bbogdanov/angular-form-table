@@ -1,3 +1,8 @@
-<form [formGroup]="table">
-  <app-row class="flex flex-row" *ngFor="let row of rows" [row]="row"></app-row>
+<ng-container *ngIf="this.showHeaders">
+  <div class="tableForm-headers flex flex-row">
+    <div class="tableForm-headers__head" *ngFor="let cellHeader of rows[0].controls | keys ">{{cellHeader}}</div>
+  </div>
+</ng-container>
+<form class="tableForm" [formGroup]="table">
+  <app-row class="tableForm__row flex flex-row" *ngFor="let row of rows" [row]="row"></app-row>
 </form>
