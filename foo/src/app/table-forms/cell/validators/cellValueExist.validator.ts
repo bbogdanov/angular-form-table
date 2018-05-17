@@ -12,15 +12,17 @@ export const cellValueExist = (errors: ValidationErrors): ValidatorFn => {
 
     const table = cell.getTable();
 
-    table.controls.forEach((row: RowControl) => {
-      for (let cellKey in row.controls) {
-        const currentCell = row.controls[cellKey];
+    if (table) {
+      table.controls.forEach((row: RowControl) => {
+        for (let cellKey in row.controls) {
+          const currentCell = row.controls[cellKey];
 
-        if (currentCell !== cell && cell.value === currentCell.value) {
-          validationErrors = errors;
+          if (currentCell !== cell && cell.value === currentCell.value) {
+            validationErrors = errors;
+          }
         }
-      }
-    });
+      });
+    }
 
     return validationErrors;
   };
