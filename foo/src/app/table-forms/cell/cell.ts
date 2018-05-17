@@ -1,6 +1,7 @@
-import {AbstractControl, FormControl} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import {AsyncValidatorFn, ValidatorFn} from '@angular/forms/src/directives/validators';
 import {AbstractControlOptions} from '@angular/forms/src/model';
+import {findTable} from '../../utils/';
 import {TableControl} from '../table/table';
 
 export class CellControl extends FormControl {
@@ -12,16 +13,6 @@ export class CellControl extends FormControl {
   }
 
   public getTable(): TableControl {
-    return this.findTable(this.parent);
+    return findTable(this.parent);
   }
-
-  //TODO move that one to utils function.
-  private findTable(parent: AbstractControl): TableControl {
-    if (parent instanceof TableControl) {
-      return parent;
-    } else {
-      return this.findTable(parent.parent);
-    }
-  }
-
 }
