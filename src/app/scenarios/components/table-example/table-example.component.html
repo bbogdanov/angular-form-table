@@ -1,0 +1,9 @@
+<app-table [rows]="config.rows"></app-table>
+<button type="button" (click)="log()"> Logger </button>
+<button type="button" (click)="addNewRow()"> Add row </button>
+<button type="button" (click)="deleteRow()"> Delete row </button>
+
+<br/>
+
+<input type="number" [(ngModel)]="rowIndex" />
+<button type="button" (click)="deleteRow(rowIndex)"> Delete row with index </button>

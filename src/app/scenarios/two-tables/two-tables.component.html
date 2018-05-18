@@ -1,0 +1,20 @@
+<app-table-example></app-table-example>
+<app-table-example></app-table-example>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<input type="number" [(ngModel)]="rowIndex" />
+<select [(ngModel)]="fromTable">
+  <option value="first"> First table </option>
+  <option value="last"> Second table </option>
+</select>
+<select [(ngModel)]="toTable">
+  <option value="first"> First table </option>
+  <option value="last"> Second table </option>
+</select>
+
+<button type="button" (click)="moveRowToAnother()"> Move </button>
