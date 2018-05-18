@@ -1,7 +1,8 @@
 {
-  "name": "table-form",
+  "name": "angular-form-table",
   "version": "1.1.0",
-  "license": "Apache-2.0",
+  "description": "An angular form table.",
+  "main": "src/main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +11,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -45,5 +45,22 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbogdanov/angular-form-table.git"
+  },
+  "keywords": [
+    "angular-forms",
+    "angular",
+    "forms",
+    "table"
+  ],
+  "author": "Bogdan Bogdanov<contact@bbogdanov.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bbogdanov/angular-form-table/issues"
+  },
+  "homepage": "https://github.com/bbogdanov/angular-form-table#readme",
+  "private": true
 }
