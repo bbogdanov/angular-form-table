@@ -14,7 +14,7 @@ export class TableExampleComponent {
 
   @ViewChild(TableComponent) table: TableComponent;
 
-  public rowIndex: number = 0;
+  public rowIndex = 0;
 
   public config = {
     rows: [
@@ -37,14 +37,16 @@ export class TableExampleComponent {
   }
 
   private logger(control: TableControl | RowControl) {
-    if (!control) return;
+    if (!control) {
+      return;
+    }
 
     console.log(control);
 
     if (control.controls) {
-      for (let index in control.controls) {
+      Object.keys(control.controls).forEach((index: string | number) => {
         this.logger(control.controls[index]);
-      }
+      });
     }
   }
 
@@ -62,11 +64,11 @@ export class TableExampleComponent {
 
   private createRow() {
     return new RowControl({
-      'test'      : new CellControl('', cellValueExist({ valueExist: 'Value already exist.'})),
-      'test2'     : new CellControl('', cellValueExist({ valueExist: 'Value already exist.'})),
-      'test3'     : new CellControl('', cellValueExist({ valueExist: 'Value already exist.'})),
-      'test4'     : new CellControl('', cellValueExist({ valueExist: 'Value already exist.'})),
-      'test5'     : new CellControl('', cellValueExist({ valueExist: 'Value already exist.'})),
+      'test': new CellControl('', cellValueExist({valueExist: 'Value already exist.'})),
+      'test2': new CellControl('', cellValueExist({valueExist: 'Value already exist.'})),
+      'test3': new CellControl('', cellValueExist({valueExist: 'Value already exist.'})),
+      'test4': new CellControl('', cellValueExist({valueExist: 'Value already exist.'})),
+      'test5': new CellControl('', cellValueExist({valueExist: 'Value already exist.'}))
     });
   }
 

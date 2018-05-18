@@ -13,13 +13,9 @@ export class TwoTablesComponent {
   public fromTable;
   public toTable;
 
-  ngOnChanges(changes) {
-    console.log(changes);
-  }
-
   public moveRowToAnother() {
-    let fTable = this.tableExamples[this.fromTable];
-    let tTable = this.tableExamples[this.toTable];
+    const fTable = this.tableExamples[this.fromTable];
+    const tTable = this.tableExamples[this.toTable];
 
     fTable.table.table.moveRowToAnother(tTable.table.table, this.rowIndex);
   }

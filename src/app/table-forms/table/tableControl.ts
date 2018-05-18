@@ -29,7 +29,7 @@ export class TableControl extends FormArray {
   }
 
   public moveRowToAnother(table: TableControl, rowIndex: number): void {
-    if(!table && (!rowIndex || rowIndex !== 0)) {
+    if (!table && (!rowIndex || rowIndex !== 0)) {
       return;
     }
 
@@ -53,10 +53,10 @@ export class TableControl extends FormArray {
         row.updateValueAndValidity();
 
         if (Object.keys(row.controls).length > 0) {
-          for (let cellKey in row.controls) {
+          Object.keys(row.controls).forEach((cellKey: string | number) => {
             row.controls[cellKey].updateValueAndValidity();
             row.controls[cellKey].updateValueAndValidity();
-          }
+          });
         }
       });
     }
