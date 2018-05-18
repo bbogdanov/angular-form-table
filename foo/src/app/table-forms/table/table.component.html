@@ -1,4 +1,4 @@
-<ng-container *ngIf="this.showHeaders">
+<ng-container *ngIf="configuration.showHeaders">
   <div class="tableForm-headers flex flex-row">
     <div class="tableForm-headers__head" *ngFor="let cellHeader of rows[0].controls | keys ">{{cellHeader}}</div>
   </div>

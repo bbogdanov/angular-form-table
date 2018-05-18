@@ -1,5 +1,7 @@
 import {Component, Input, OnInit, Optional} from '@angular/core';
 import {AbstractControl, AsyncValidatorFn, ValidatorFn} from '@angular/forms';
+import {ITableComponentConfig} from './config/ITableComponent.config';
+import {TableComponentConfig} from './config/TableComponent.config';
 import {TableControl} from './table';
 
 @Component({
@@ -20,10 +22,13 @@ export class TableComponent implements OnInit {
   @Optional()
   public asyncValidators: AsyncValidatorFn[];
 
+  @Input()
+  public configuration: ITableComponentConfig = new TableComponentConfig();
+
   public table: TableControl;
 
   public ngOnInit() {
-    this.table = new TableControl(this.rows);
+    this.table = new TableControl(this.rows, this.validators, this.asyncValidators);
   }
-  
+
 }
