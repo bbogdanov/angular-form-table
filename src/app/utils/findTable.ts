@@ -1,5 +1,5 @@
 import {AbstractControl} from '@angular/forms';
-import {TableControl} from '../table-forms/table/table';
+import {TableControl} from '../table-forms/table/tableControl';
 
 export const findTable = (parent: AbstractControl): TableControl => {
   if (!parent) return;

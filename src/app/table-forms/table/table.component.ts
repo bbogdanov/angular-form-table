@@ -2,7 +2,7 @@ import {Component, Input, OnInit, Optional} from '@angular/core';
 import {AbstractControl, AsyncValidatorFn, ValidatorFn} from '@angular/forms';
 import {ITableComponentConfig} from './config/ITableComponent.config';
 import {TableComponentConfig} from './config/TableComponent.config';
-import {TableControl} from './table';
+import {TableControl} from './tableControl';
 
 @Component({
   selector: 'app-table',

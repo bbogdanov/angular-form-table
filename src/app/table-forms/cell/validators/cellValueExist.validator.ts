@@ -1,6 +1,6 @@
 import {ValidationErrors, ValidatorFn} from '@angular/forms';
-import {RowControl} from '../../row/row';
-import {CellControl} from '../cell';
+import {RowControl} from '../../row/rowControl';
+import {CellControl} from '../cellControl';
 
 export const cellValueExist = (errors: ValidationErrors): ValidatorFn => {
   return (cell: CellControl): ValidationErrors | null => {

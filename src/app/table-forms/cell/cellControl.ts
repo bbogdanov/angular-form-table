@@ -2,7 +2,7 @@ import {FormControl} from '@angular/forms';
 import {AsyncValidatorFn, ValidatorFn} from '@angular/forms/src/directives/validators';
 import {AbstractControlOptions} from '@angular/forms/src/model';
 import {findTable} from '../../utils/';
-import {TableControl} from '../table/table';
+import {TableControl} from '../table/tableControl';
 
 export class CellControl extends FormControl {
 
