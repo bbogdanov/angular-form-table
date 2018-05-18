@@ -28,6 +28,18 @@ export class TableControl extends FormArray {
     }
   }
 
+  public moveRowToAnother(table: TableControl, rowIndex: number): void {
+    if(!table && (!rowIndex || rowIndex !== 0)) {
+      return;
+    }
+
+    const row = this.controls[rowIndex];
+
+    table.push(row);
+
+    this.pop(rowIndex);
+  }
+
   /**
    * Updates and validates the entire table.
    *
